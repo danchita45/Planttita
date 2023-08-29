@@ -1,58 +1,12 @@
-﻿using System;
+﻿using Planta;
+using System;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Plant plant = new Plant();
-
-        int waterAmount = 0;
-        int bnd =0;
-        Console.WriteLine($"Día {0}: {plant.GetGrowthMessage()}");
-        Console.WriteLine($"   Humedad: {plant.Humidity}%");
-        Console.WriteLine($"   Necesita sol: {plant.NeedsSunlight}");
-        Console.WriteLine();
-        for (int day = 1; day <= 10; day++)
-        {
-
-
-
-            Console.Write("Regarás la planta hoy?  Si = 1 No =0 " + day.ToString()+"\n");
-            waterAmount = int.Parse(Console.ReadLine());
-            
-            if (waterAmount > 0)
-            {
-                Console.WriteLine("se ha regado la planta");
-                bnd = 1;
-                if (plant.IncreaseHumidity() == 0)
-                    break;
-            }
-            else
-            {  
-                plant.DecreaseHumidity();
-            }
-
-            Console.Write("pondrás la planta al sol? Si = 1 No =0 " + day.ToString()+"\n");
-            int opc = int.Parse(Console.ReadLine());
-
-            if (opc != 0)
-            {
-                Console.Write("se ha puesto la planta al sol " + day.ToString() + "\n");
-                bnd= 1;
-            }
-            else
-            {
-                plant.CheckSunlight();
-            }
-
-            if (bnd == 2)
-                plant.Grow();
-
-            Console.WriteLine($"Día {day}: {plant.GetGrowthMessage()}");
-            Console.WriteLine($"   Humedad: {plant.Humidity}%");
-            Console.WriteLine($"   Necesita sol: {plant.NeedsSunlight}");
-            Console.WriteLine();
-        }
+        CE cE = new CE();
+        cE.MainnCE();
     }
 }
 

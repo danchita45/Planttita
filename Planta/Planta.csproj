@@ -7,4 +7,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="CoreCLR-NCalc" Version="2.2.113" />
+    <PackageReference Include="EPPlus" Version="6.2.8" />
+  </ItemGroup>
+
 </Project>
